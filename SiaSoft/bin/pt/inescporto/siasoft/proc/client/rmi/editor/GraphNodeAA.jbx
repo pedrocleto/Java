@@ -1,0 +1,12 @@
+[PropertyInfo]
+AA1,int,false,false, , ,false,<default>
+AA2,int,false,false, , ,false,<default>
+AA3,int,false,false, , ,false,<default>
+color,java.awt.Color,false,false, , ,false,<default>
+name,String,false,false, , ,true,<default>
+type,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

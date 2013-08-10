@@ -1,0 +1,14 @@
+[PropertyInfo]
+jbtng,javax.swing.ButtonGroup,false,false, , ,true,<default>
+jtbtnMasq,pt.inescporto.template.client.design.TmplJToggleButton,false,false, , ,false,<default>
+jtbtnMcom,pt.inescporto.template.client.design.TmplJToggleButton,false,false, , ,false,<default>
+jtbtnMdoc,pt.inescporto.template.client.design.TmplJToggleButton,false,false, , ,false,<default>
+jtbtnMform,pt.inescporto.template.client.design.TmplJToggleButton,false,false, , ,false,<default>
+jtbtnMproc,pt.inescporto.template.client.design.TmplJToggleButton,false,false, , ,false,<default>
+jtbtnOp,pt.inescporto.template.client.design.TmplJToggleButton,false,false, , ,false,<default>
+MListener,pt.inescporto.siasoft.proc.client.rmi.editor.ModuleListener,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

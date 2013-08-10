@@ -1,0 +1,12 @@
+[PropertyInfo]
+indexFields,java.util.Vector,false,false, , ,false,<default>
+indexName,String,false,false, , ,false,<default>
+indexType,int,false,false, , ,false,<default>
+NONUNIQUE,int,false,false, , ,false,<default>
+NOTDEF,int,false,false, , ,false,<default>
+UNIQUE,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

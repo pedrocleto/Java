@@ -1,0 +1,7 @@
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Pedro Ribeiro (INESC Porto) -->
+<report-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="report-config.xsd">
+	<jasper>
+<!--          <parameter name="ImageName" anchor="pt.inescporto.wcontrol.template.reports.ReportsAnchor" value="images/Empilhador.gif" type="java.awt.Image"/>-->
+          <parameter name="TestParm" value="label.viewLots" type="java.lang.String"/>
+	</jasper>
+</report-config>

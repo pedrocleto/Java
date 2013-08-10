@@ -1,0 +1,10 @@
+[PropertyInfo]
+afterJoinSyntax,String,false,false, , ,false,<default>
+joinSyntax,String,false,false, , ,false,<default>
+linkFieldList,java.util.Vector,false,false, , ,true,<default>
+linkTableName,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

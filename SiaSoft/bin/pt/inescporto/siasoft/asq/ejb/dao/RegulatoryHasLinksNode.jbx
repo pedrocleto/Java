@@ -1,0 +1,11 @@
+[PropertyInfo]
+regID,String,false,false, , ,true,<default>
+moduleDescription,String,false,false, , ,true,<default>
+moduleKey,String,false,false, , ,true,<default>
+moduleName,String,false,false, , ,true,<default>
+refKey,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

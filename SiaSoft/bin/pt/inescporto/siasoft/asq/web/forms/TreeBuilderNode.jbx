@@ -1,0 +1,9 @@
+[PropertyInfo]
+nodeID,String,false,false,nodeID,nodeID,true,<default>
+nodeDescription,String,false,false,nodeDescription,nodeDescription,true,<default>
+nodeType,int,false,false,nodeType,nodeType,true,<default>
+[IconNames]
+
+
+
+

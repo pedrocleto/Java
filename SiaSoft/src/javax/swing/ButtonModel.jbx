@@ -1,0 +1,14 @@
+[PropertyInfo]
+actionCommand,String,false,false, , ,true,<default>
+armed,boolean,false,false, , ,true,<default>
+enabled,boolean,false,false, , ,true,<default>
+group,javax.swing.ButtonGroup,false,false, , ,true,<default>
+mnemonic,int,false,false, , ,true,<default>
+pressed,boolean,false,false, , ,true,<default>
+rollover,boolean,false,false, , ,true,<default>
+selected,boolean,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

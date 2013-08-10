@@ -1,0 +1,10 @@
+[PropertyInfo]
+docID,Integer,false,false, , ,false,<default>
+path,String,false,false, , ,false,<default>
+score,Float,false,false, , ,false,<default>
+title,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

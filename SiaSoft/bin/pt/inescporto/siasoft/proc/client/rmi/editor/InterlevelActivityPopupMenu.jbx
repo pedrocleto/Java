@@ -1,0 +1,9 @@
+[PropertyInfo]
+frame,javax.swing.JFrame,false,false, , ,false,<default>
+graph,pt.inescporto.siasoft.proc.client.rmi.editor.Graph,false,false, , ,false,<default>
+linkItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,11 @@
+[PropertyInfo]
+frame,javax.swing.JFrame,false,false, , ,false,<default>
+graph,pt.inescporto.siasoft.proc.client.rmi.editor.Graph,false,false, , ,true,<default>
+peListener,pt.inescporto.siasoft.proc.client.rmi.editor.ProcessEventInterface,false,false, , ,false,<default>
+size,java.awt.Dimension,false,false, , ,false,<default>
+wndGraphics,pt.inescporto.siasoft.proc.client.rmi.editor.GraphicInterface,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

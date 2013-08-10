@@ -1,0 +1,10 @@
+[PropertyInfo]
+dbIncrementalData,java.util.Hashtable,false,false, , ,false,<default>
+diffStmtList,java.util.Vector,false,false, , ,false,<default>
+fileName,String,false,false, , ,false,<default>
+tableTree,java.util.Hashtable,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

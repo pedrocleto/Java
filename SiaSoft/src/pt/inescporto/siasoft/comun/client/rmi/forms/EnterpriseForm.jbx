@@ -1,0 +1,22 @@
+[PropertyInfo]
+jcbSupplier,pt.inescporto.template.client.design.TmplJComboBox,false,false, , ,false,<default>
+jlblAddress,pt.inescporto.template.client.design.TmplJLabel,false,false, , ,false,<default>
+jlblCAE,pt.inescporto.template.client.design.TmplJLabel,false,false, , ,false,<default>
+jlblCoordinator,pt.inescporto.template.client.design.TmplJLabel,false,false, , ,false,<default>
+jlblEName,pt.inescporto.template.client.design.TmplJLabel,false,false, , ,false,<default>
+jlblEnterprise,pt.inescporto.template.client.design.TmplJLabel,false,false, , ,false,<default>
+jlblSupplier,pt.inescporto.template.client.design.TmplJLabel,false,false, , ,false,<default>
+jlblUrl,pt.inescporto.template.client.design.TmplJLabel,false,false, , ,false,<default>
+jpnlContent,javax.swing.JPanel,false,false, , ,false,<default>
+jtfldAddress,pt.inescporto.template.client.design.TmplJTextField,false,false, , ,false,<default>
+jtfldCAE,pt.inescporto.template.client.design.TmplJTextField,false,false, , ,false,<default>
+jtfldCoordinator,pt.inescporto.template.client.design.TmplJTextField,false,false, , ,false,<default>
+jtfldEName,pt.inescporto.template.client.design.TmplJTextField,false,false, , ,false,<default>
+jtfldEnterprise,pt.inescporto.template.client.design.TmplJTextField,false,false, , ,false,<default>
+jtfldUrl,pt.inescporto.template.client.design.TmplJTextField,false,false, , ,false,<default>
+res,java.util.ResourceBundle,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

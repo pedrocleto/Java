@@ -1,0 +1,13 @@
+[PropertyInfo]
+IListener,pt.inescporto.siasoft.proc.client.rmi.editor.MenuItemListener,false,false, , ,false,<default>
+smAAItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+smAuditorItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+smCOEmergItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+smFunItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+smMonitorItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+smPGAItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

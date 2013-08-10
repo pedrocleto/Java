@@ -1,0 +1,742 @@
+package pt.inescporto.siasoft;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JToolBar;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import pt.inescporto.template.rmi.beans.LoggedUser;
+import pt.inescporto.template.client.rmi.MenuBuilderFactory;
+import javax.swing.JDesktopPane;
+import java.util.Vector;
+import pt.inescporto.template.utils.beans.FormData;
+import pt.inescporto.template.client.rmi.TmplBasicInternalFrame;
+import javax.swing.JInternalFrame;
+import pt.inescporto.template.ejb.session.MenuControl;
+import pt.inescporto.template.client.rmi.TmplEJBLocater;
+import javax.swing.event.InternalFrameListener;
+import java.rmi.*;
+import javax.swing.event.InternalFrameEvent;
+import pt.inescporto.template.client.rmi.MenuSingleton;
+import pt.inescporto.template.client.rmi.MenuInterface;
+import pt.inescporto.siasoft.comun.client.rmi.forms.ApplicableProfileForm;
+import pt.inescporto.siasoft.comun.client.UserData;
+import java.beans.*;
+import pt.inescporto.template.client.rmi.FW_InternalFrameBasic;
+import pt.inescporto.template.client.design.TmplJComboBox;
+import pt.inescporto.template.client.event.TemplateEvent;
+import pt.inescporto.template.client.design.TmplJLabel;
+import pt.inescporto.template.client.design.FormRecordSelector;
+import pt.inescporto.siasoft.events.SyncronizerSubjects;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
+import pt.inescporto.siasoft.comun.client.rmi.forms.WarningMessagesForm;
+import pt.inescporto.siasoft.asq.ejb.session.Regulatory;
+import pt.inescporto.siasoft.asq.ejb.dao.RegulatoryDao;
+import pt.inescporto.siasoft.go.aa.client.rmi.forms.EnvironmentAspectForm;
+import pt.inescporto.siasoft.proc.client.rmi.editor.ProcessEditor;
+import pt.inescporto.siasoft.asq.client.rmi.forms.RegulatoryTreeForm;
+import pt.inescporto.siasoft.go.auditor.client.rmi.forms.AuditForm;
+import pt.inescporto.siasoft.go.monitor.client.rmi.forms.MonitorForm;
+import pt.inescporto.siasoft.go.monitor.client.rmi.forms.MonitorPlanForm;
+import pt.inescporto.siasoft.go.auditor.client.rmi.forms.AuditPlanForm;
+import pt.inescporto.siasoft.asq.web.forms.RegulatoryForm;
+import pt.inescporto.siasoft.go.aa.client.rmi.forms.EnvAspClassForm;
+import pt.inescporto.siasoft.go.aa.client.rmi.forms.EvaluationCriterionForm;
+import pt.inescporto.siasoft.proc.client.rmi.forms.PartClassForm;
+import pt.inescporto.siasoft.proc.client.rmi.forms.PartTypeForm;
+
+/**
+ * <p>Title: SIASoft</p>
+ *
+ * <p>Description: </p>
+ *
+ * <p>Copyright: Copyright (c) 2005</p>
+ *
+ * <p>Company: INESC Porto</p>
+ *
+ * @author jap
+ * @version 0.1
+ */
+public class MenuFrame extends JFrame implements ActionListener, InternalFrameListener, MenuInterface {
+  LoggedUser usrInfo = null;
+  UserData userData = UserData.getInstance();
+  JDesktopPane desktop = null;
+
+  private MenuControl menu = null;
+
+  private Vector wndCache = new Vector();
+  BorderLayout borderLayout1 = new BorderLayout();
+
+  JMenuBar jmbDynamicMenu = null;
+  JMenu jmWindows = null;
+
+  JToolBar jToolBar = new JToolBar();
+  JButton jBtnProfile = new JButton();
+  JButton jButton1 = new JButton();
+  JButton jButton11 = new JButton();
+  JButton jButton12 = new JButton();
+  JButton jButton2 = new JButton();
+  JButton jButton21 = new JButton();
+  JButton jButton22 = new JButton();
+  //JButton jButton23 = new JButton();
+  JButton jButton3 = new JButton();
+  JButton jButton31 = new JButton();
+  JButton jButton32 = new JButton();
+  JButton jButton33 = new JButton();
+  JButton jButton4 = new JButton();
+  JButton jButton41 = new JButton();
+  JButton jButton42 = new JButton();
+  JButton jButton43 = new JButton();
+  JButton jButton44 = new JButton();
+
+  TmplJComboBox jcmbEnterpriseSelector = null;
+  ImageIcon image1 = new ImageIcon(pt.inescporto.siasoft.MenuFrame.class.getResource("profile.png"));
+  JLabel statusBar = new JLabel();
+
+  public MenuFrame(LoggedUser usrInfo) {
+    this.usrInfo = usrInfo;
+    MenuSingleton.setMenu(this);
+
+    try {
+      menu = (MenuControl)TmplEJBLocater.getInstance().getEJBRemote("pt.inescporto.template.ejb.session.MenuControl");
+      jbInit();
+    }
+    catch (Exception ex) {
+      ex.printStackTrace();
+    }
+
+    try {
+      setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    catch (Exception exception) {
+      exception.printStackTrace();
+    }
+  }
+
+  /**
+   * Component initialization.
+   *
+   * @throws java.lang.Exception
+   */
+  private void jbInit() throws Exception {
+    setLayout(borderLayout1);
+    setSize(new Dimension(1024, 768));
+    setTitle("Frame Title");
+    statusBar.setText(" ");
+
+    // get dynamic menu
+    jmbDynamicMenu = MenuBuilderFactory.getInstance().getMenu(usrInfo.getMenuConfig(), this);
+
+    // add Windows menu
+    jmWindows = new JMenu("Janelas");
+    jmWindows.setFont(new Font("Dialog", Font.PLAIN, 10));
+    jmbDynamicMenu.add(jmWindows);
+
+    // add menu bar to the frame
+    setJMenuBar(jmbDynamicMenu);
+
+    // button short cuts
+    jBtnProfile.setIcon(image1);
+    jBtnProfile.setToolTipText("Selecção de Perfil");
+    jBtnProfile.setActionCommand("SEL_PROFILE");
+    jBtnProfile.addActionListener(this);
+
+    //jButton2.setIcon(image1);
+    jButton1.setText("1");
+    jButton1.setToolTipText("ASQ");
+    jButton1.setActionCommand("1");
+    jButton1.addActionListener(this);
+
+    jButton11.setText("1.1");
+    jButton11.setToolTipText("Diplomas");
+    jButton11.setActionCommand("11");
+    jButton11.addActionListener(this);
+
+    jButton12.setText("1.2");
+    jButton12.setToolTipText("Vista Em Arvore");
+    jButton12.setActionCommand("12");
+    jButton12.addActionListener(this);
+
+    jButton2.setText("2");
+    jButton2.setToolTipText("MPROC");
+    jButton2.setActionCommand("2");
+    jButton2.addActionListener(this);
+
+    jButton21.setText("2.1");
+    jButton21.setToolTipText("Editor de Processos");
+    jButton21.setActionCommand("2.1");
+    jButton21.addActionListener(this);
+
+    jButton22.setText("2.2");
+    jButton22.setToolTipText("Artigos");
+    jButton22.setActionCommand("2.2");
+    jButton22.addActionListener(this);
+
+    /*jButton23.setText("2.3");
+    jButton23.setToolTipText("Tipo de Artigos");
+    jButton23.setActionCommand("2.3");
+    jButton23.addActionListener(this);*/
+
+    jButton3.setText("3");
+    jButton3.setToolTipText("Aspectos Ambientais");
+    jButton3.setActionCommand("3");
+    jButton3.addActionListener(this);
+
+    jButton31.setText("3.1");
+    jButton31.setToolTipText("Aspectos Ambientais");
+    jButton31.setActionCommand("3.1");
+    jButton31.addActionListener(this);
+
+    jButton32.setText("3.2");
+    jButton32.setToolTipText("Classes de Aspectos Ambientais");
+    jButton32.setActionCommand("3.2");
+    jButton32.addActionListener(this);
+
+    jButton33.setText("3.3");
+    jButton33.setToolTipText("Critérios de Avaliação");
+    jButton33.setActionCommand("3.3");
+    jButton33.addActionListener(this);
+
+    jButton4.setText("4");
+    jButton4.setToolTipText("Monitorizações/Auditorias");
+    jButton4.setActionCommand("4");
+    jButton4.addActionListener(this);
+
+    jButton41.setText("4.1");
+    jButton41.setToolTipText("Planos Monitorizações");
+    jButton41.setActionCommand("4.1");
+    jButton41.addActionListener(this);
+
+    jButton42.setText("4.2");
+    jButton42.setToolTipText("Planos Auditorias");
+    jButton42.setActionCommand("4.2");
+    jButton42.addActionListener(this);
+
+    jButton43.setText("4.3");
+    jButton43.setToolTipText("Manutenção Monitorizações");
+    jButton43.setActionCommand("4.3");
+    jButton43.addActionListener(this);
+
+    jButton44.setText("4.4");
+    jButton44.setToolTipText("Manutenção Auditorias");
+    jButton44.setActionCommand("4.4");
+    jButton44.addActionListener(this);
+
+    jToolBar.add(jBtnProfile);
+
+    if (usrInfo.isSupplier()) {
+      TmplJLabel jlblEnterprise = new TmplJLabel("Empresa ");
+      jcmbEnterpriseSelector = new TmplJComboBox(jlblEnterprise, "-", "pt.inescporto.siasoft.comun.ejb.session.Enterprise", new Integer[] {new Integer(0), new Integer(0)});
+      jcmbEnterpriseSelector.setPreferredSize(new Dimension(150, 25));
+      jcmbEnterpriseSelector.setMinimumSize(new Dimension(150, 25));
+      jcmbEnterpriseSelector.setMaximumSize(new Dimension(150, 25));
+      jcmbEnterpriseSelector.setWatcherSubject(SyncronizerSubjects.sysENTERPRISE);
+      jcmbEnterpriseSelector.tmplInitialize(new TemplateEvent(this));
+      jToolBar.addSeparator();
+      jToolBar.add(jlblEnterprise);
+      jToolBar.add(jcmbEnterpriseSelector);
+    }
+
+    Dimension frameSize = this.getSize();
+    double x = frameSize.getWidth();
+    if (usrInfo.isSupplier()) {
+      x = x - 400;
+    }
+    else {
+      x = x - 200;
+    }
+    jToolBar.addSeparator();
+
+    jToolBar.addSeparator(new Dimension((int)x, 0));
+
+    jToolBar.addSeparator();
+
+    jToolBar.add(jButton1);
+    jToolBar.add(jButton2);
+    jToolBar.add(jButton3);
+    jToolBar.add(jButton4);
+
+    jToolBar.addSeparator();
+
+    desktop = new JDesktopPane();
+    add(jToolBar, BorderLayout.NORTH);
+    add(desktop, BorderLayout.CENTER);
+
+    // test warning messages
+    WarningMessagesForm wm = new WarningMessagesForm();
+    if (wm.hasData) {
+      wm.pack();
+      wm.setClosable(true);
+      desktop.add(wm);
+      wm.setVisible(true);
+      wm.setSelected(true);
+    }
+  }
+  /**
+   *
+   * @param ev ActionEvent
+   */
+  public void actionPerformed(ActionEvent ev) {
+    setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    try {
+      if (ev.getActionCommand().equals("1")) {
+	jToolBar.remove(jButton21);
+	jToolBar.remove(jButton22);
+	//jToolBar.remove(jButton23);
+        jToolBar.remove(jButton41);
+	jToolBar.remove(jButton42);
+        jToolBar.remove(jButton43);
+	jToolBar.remove(jButton44);
+	jToolBar.remove(jButton31);
+	jToolBar.remove(jButton32);
+	jToolBar.remove(jButton33);
+        jToolBar.add(jButton11);
+	jToolBar.add(jButton12);
+	jToolBar.repaint();
+return;
+      }
+      if (ev.getActionCommand().equals("11")) {
+	RegulatoryForm reg = new RegulatoryForm();
+	reg.setTitle("Diplomas");
+	MenuSingleton.addContainer(reg);
+return;
+      }
+      if (ev.getActionCommand().equals("12")) {
+	RegulatoryTreeForm tree = new RegulatoryTreeForm();
+	tree.setTitle("Vista Em Arvore");
+	MenuSingleton.addContainer(tree);
+return;
+      }
+
+
+    if (ev.getActionCommand().equals("2")) {
+	jToolBar.remove(jButton41);
+	jToolBar.remove(jButton42);
+        jToolBar.remove(jButton43);
+	jToolBar.remove(jButton44);
+        jToolBar.remove(jButton11);
+	jToolBar.remove(jButton12);
+	jToolBar.remove(jButton31);
+	jToolBar.remove(jButton32);
+	jToolBar.remove(jButton33);
+	jToolBar.add(jButton21);
+	jToolBar.add(jButton22);
+	//jToolBar.add(jButton23);
+	jToolBar.repaint();
+return;
+      }
+      if (ev.getActionCommand().equals("2.1")) {
+	ProcessEditor proc = new ProcessEditor();
+	proc.setTitle("Editor de Processos");
+	MenuSingleton.addContainer(proc);
+return;
+      }
+      if (ev.getActionCommand().equals("2.2")) {
+	PartClassForm asp = new PartClassForm();
+	asp.setTitle("Artigos");
+	MenuSingleton.addContainer(asp);
+return;
+      }
+     /* if (ev.getActionCommand().equals("2.3")) {
+	PartTypeForm asp = new PartTypeForm();
+	asp.setTitle("Tipo de Artigos");
+	MenuSingleton.addContainer(asp);
+return;
+      }*/
+
+      if (ev.getActionCommand().equals("3")) {
+        jToolBar.remove(jButton21);
+        jToolBar.remove(jButton22);
+        //jToolBar.remove(jButton23);
+	jToolBar.remove(jButton41);
+	jToolBar.remove(jButton42);
+	jToolBar.remove(jButton43);
+	jToolBar.remove(jButton44);
+	jToolBar.remove(jButton11);
+	jToolBar.remove(jButton12);
+	jToolBar.add(jButton31);
+	jToolBar.add(jButton32);
+	jToolBar.add(jButton33);
+	jToolBar.repaint();
+
+return;
+      }
+      if (ev.getActionCommand().equals("3.1")) {
+        EnvironmentAspectForm asp = new EnvironmentAspectForm();
+                asp.setTitle("Aspectos Ambientais");
+	MenuSingleton.addContainer(asp);
+return;
+      }
+      if (ev.getActionCommand().equals("3.2")) {
+        EnvAspClassForm asp = new EnvAspClassForm();
+                asp.setTitle("Classes de Aspectos Ambientais");
+	MenuSingleton.addContainer(asp);
+return;
+      }
+      if (ev.getActionCommand().equals("3.3")) {
+        EvaluationCriterionForm asp = new EvaluationCriterionForm();
+        asp.setTitle("Critérios de Avaliação");
+        MenuSingleton.addContainer(asp);
+
+return;
+      }
+      if (ev.getActionCommand().equals("4")) {
+        jToolBar.remove(jButton21);
+        jToolBar.remove(jButton22);
+       // jToolBar.remove(jButton23);
+        jToolBar.remove(jButton11);
+	jToolBar.remove(jButton12);
+	jToolBar.remove(jButton31);
+	jToolBar.remove(jButton32);
+	jToolBar.remove(jButton33);
+	jToolBar.add(jButton41);
+	jToolBar.add(jButton42);
+        jToolBar.add(jButton43);
+	jToolBar.add(jButton44);
+	jToolBar.repaint();
+return;
+      }
+      if (ev.getActionCommand().equals("4.1")) {
+	MonitorPlanForm monitor = new MonitorPlanForm();
+	monitor.setTitle("Planos de Monitorização");
+	MenuSingleton.addContainer(monitor);
+return;
+      }
+      if (ev.getActionCommand().equals("4.2")) {
+	AuditPlanForm audit = new AuditPlanForm();
+	audit.setTitle("Planos de Auditoria");
+	MenuSingleton.addContainer(audit);
+return;
+      }
+      if (ev.getActionCommand().equals("4.3")) {
+        MonitorForm monitor = new MonitorForm();
+        monitor.setTitle("Manutenção de Monitorizações");
+        MenuSingleton.addContainer(monitor);
+return;
+      }
+      if (ev.getActionCommand().equals("4.4")) {
+        AuditForm audit = new AuditForm();
+        audit.setTitle("Manutenção de Auditorias");
+        MenuSingleton.addContainer(audit);
+return;
+      }
+
+      if (ev.getActionCommand().equals("SEL_PROFILE")) {
+	jToolBar.remove(jButton21);
+	jToolBar.remove(jButton22);
+      // jToolBar.remove(jButton23);
+	jToolBar.remove(jButton11);
+	jToolBar.remove(jButton12);
+	jToolBar.remove(jButton31);
+	jToolBar.remove(jButton32);
+	jToolBar.remove(jButton33);
+	jToolBar.remove(jButton41);
+	jToolBar.remove(jButton42);
+	jToolBar.remove(jButton43);
+	jToolBar.remove(jButton44);
+	jToolBar.repaint();
+
+	JInternalFrame newWindow = getFrameFromCache(ev.getActionCommand());
+	if (newWindow == null) {
+	  ApplicableProfileForm frm = new ApplicableProfileForm();
+	  frm.setVisible(true);
+	  frm.setResizable(true);
+	  frm.setClosable(true);
+	  frm.MinimumPack();
+	  newWindow = frm;
+	  newWindow.setVisible(true);
+	  newWindow.setResizable(true);
+	  newWindow.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+	  newWindow.setTitle("Selecção de Perfil");
+	  newWindow.addInternalFrameListener(this);
+	  desktop.add(newWindow);
+	  try {
+	    newWindow.setSelected(true);
+	  }
+	  catch (java.beans.PropertyVetoException e) {}
+	  addFrameToCache(new WindowNode(ev.getActionCommand(), "Selecção de Perfil", ((JInternalFrame)newWindow)));
+	}
+	else {
+	  newWindow.show();
+	  newWindow.setVisible(true);
+	  try {
+	    newWindow.setSelected(true);
+	  }
+	  catch (java.beans.PropertyVetoException e) {}
+	}
+
+return;
+      }
+      JInternalFrame newWindow = getFrameFromCache(ev.getActionCommand());
+      if (newWindow == null) {
+	FormData formData = null;
+	try {
+	  formData = menu.getFormData(usrInfo.getMenuConfig(), ev.getActionCommand());
+	  String objName = formData.getFormClass();
+	  String s = objName.substring(0, objName.lastIndexOf('.'));
+	  Class objClass = Class.forName(s);
+	  newWindow = (JInternalFrame)objClass.newInstance();
+	  newWindow.setClosable(true);
+	  newWindow.setMaximizable(true);
+	  newWindow.setIconifiable(true);
+	  newWindow.setLocation(0, 0);
+	  newWindow.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+	  newWindow.setTitle(formData.getPageTitle());
+	  newWindow.addInternalFrameListener(this);
+	  if (newWindow instanceof pt.inescporto.template.client.rmi.TmplBasicInternalFrame)
+	    ((TmplBasicInternalFrame)newWindow).MinimumPack();
+	  else {
+	    if (newWindow instanceof pt.inescporto.template.client.rmi.FW_InternalFrameBasic) {
+	      if (!((FW_InternalFrameBasic)newWindow).hasVisualPerms())
+		return;
+	      ((FW_InternalFrameBasic)newWindow).MinimumPack();
+	    }
+	    else
+	      newWindow.pack();
+	  }
+	}
+	catch (RemoteException ex) {
+	  ex.printStackTrace();
+	}
+	catch (ClassNotFoundException ex) {
+	  ex.printStackTrace();
+	}
+	catch (InstantiationException ex) {
+	  ex.printStackTrace();
+	}
+	catch (IllegalAccessException ex) {
+	  ex.printStackTrace();
+	}
+
+	newWindow.setVisible(true);
+	newWindow.setResizable(true);
+	desktop.add(newWindow);
+	try {
+	  newWindow.setSelected(true);
+	}
+	catch (java.beans.PropertyVetoException e) {}
+	addFrameToCache(new WindowNode(ev.getActionCommand(), ((JMenuItem)ev.getSource()).getText(), ((JInternalFrame)newWindow)));
+      }
+      else {
+	newWindow.show();
+	newWindow.setVisible(true);
+	try {
+	  newWindow.setSelected(true);
+	}
+	catch (java.beans.PropertyVetoException e) {}
+      }
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+    finally {
+      setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }
+  }
+
+  protected void addFrameToCache(WindowNode node) {
+    JMenuItem jmiWindow = new JMenuItem(node.menuDescription);
+    jmiWindow.setFont(new Font("Dialog", Font.PLAIN, 10));
+    jmiWindow.setActionCommand(node.menuId);
+    jmiWindow.addActionListener(this);
+
+    node.jmiWindowMenu = jmWindows.add(jmiWindow);
+
+    wndCache.add(node);
+  }
+
+  protected void removeFrameFromCache(JInternalFrame wnd) {
+    for (int i = 0; i < wndCache.size(); i++) {
+      WindowNode node = (WindowNode)wndCache.elementAt(i);
+      if (node.frmWindow.equals(wnd)) {
+	wndCache.remove(i);
+	jmWindows.remove(node.jmiWindowMenu);
+	jmWindows.invalidate();
+	break;
+      }
+    }
+  }
+
+  protected JInternalFrame getFrameFromCache(String menuId) {
+    for (int i = 0; i < wndCache.size(); i++) {
+      WindowNode node = (WindowNode)wndCache.elementAt(i);
+      if (node.menuId.compareTo(menuId) == 0)
+	return node.frmWindow;
+    }
+    return null;
+  }
+
+  public void internalFrameActivated(InternalFrameEvent e) {}
+
+  public void internalFrameClosed(InternalFrameEvent e) {
+    removeFrameFromCache(e.getInternalFrame());
+    desktop.remove(e.getInternalFrame());
+  }
+
+  public void internalFrameClosing(InternalFrameEvent e) {}
+
+  public void internalFrameDeactivated(InternalFrameEvent e) {}
+
+  public void internalFrameDeiconified(InternalFrameEvent e) {}
+
+  public void internalFrameIconified(InternalFrameEvent e) {}
+
+  public void internalFrameOpened(InternalFrameEvent e) {}
+
+  /**
+   * Implementation of the MenuInterface
+   */
+
+  /**
+   *
+   * @return String
+   */
+  public String getRole() {
+    return usrInfo.getRoleId();
+  }
+
+  public String getName() {
+    return usrInfo.getUsrId();
+  }
+
+  public boolean isSupplier() {
+    return usrInfo.isSupplier();
+  }
+
+  public String getEnterprise() {
+    return usrInfo.getEnterpriseId();
+  }
+
+  public String getSelectedEnterprise() {
+    return jcmbEnterpriseSelector.getSelectedIndex() >= 1 ? (String)jcmbEnterpriseSelector.getTrueSelectItem() : null;
+  }
+
+  public UserData getUserData() {
+    return userData;
+  }
+
+  public void addContainerFW(Container container) {
+    JInternalFrame newWindow = (JInternalFrame)container;
+    newWindow.setClosable(true);
+    newWindow.setMaximizable(true);
+    newWindow.setLocation(0, 0);
+    newWindow.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+    newWindow.addInternalFrameListener(this);
+    if (newWindow instanceof pt.inescporto.template.client.rmi.TmplBasicInternalFrame)
+      ((TmplBasicInternalFrame)newWindow).MinimumPack();
+    else {
+      newWindow.pack();
+      if (newWindow.getHeight() > desktop.getHeight()) {
+	newWindow.setPreferredSize(new Dimension(desktop.getHeight(), newWindow.getWidth()));
+	newWindow.invalidate();
+      }
+    }
+    newWindow.setVisible(true);
+    newWindow.setResizable(true);
+    desktop.add(newWindow);
+    try {
+      newWindow.setSelected(true);
+    }
+    catch (java.beans.PropertyVetoException e) {}
+  }
+
+  public boolean loadForm(String formID, Object keyValue) {
+    setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    try {
+      JInternalFrame newWindow = getFrameFromCache(formID);
+      if (newWindow == null) {
+	FormData formData = null;
+	try {
+	  formData = menu.getFormData(usrInfo.getMenuConfig(), formID);
+	  String objName = formData.getFormClass();
+	  String s = objName.substring(0, objName.lastIndexOf('.'));
+	  Class objClass = Class.forName(s);
+	  newWindow = (JInternalFrame)objClass.newInstance();
+	  newWindow.setClosable(true);
+	  newWindow.setMaximizable(true);
+	  newWindow.setIconifiable(true);
+	  newWindow.setLocation(0, 0);
+	  newWindow.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+	  newWindow.setTitle(formData.getPageTitle());
+	  newWindow.addInternalFrameListener(this);
+	  if (newWindow instanceof pt.inescporto.template.client.rmi.TmplBasicInternalFrame)
+	    ((TmplBasicInternalFrame)newWindow).MinimumPack();
+	  else {
+	    if (newWindow instanceof pt.inescporto.template.client.rmi.FW_InternalFrameNav) {
+	      if (!((FW_InternalFrameBasic)newWindow).hasVisualPerms())
+		return false;
+	      ((FW_InternalFrameBasic)newWindow).MinimumPack();
+	    }
+	    else
+	      newWindow.pack();
+	  }
+	}
+	catch (RemoteException ex) {
+	  ex.printStackTrace();
+	}
+	catch (ClassNotFoundException ex) {
+	  ex.printStackTrace();
+	}
+	catch (InstantiationException ex) {
+	  ex.printStackTrace();
+	}
+	catch (IllegalAccessException ex) {
+	  ex.printStackTrace();
+	}
+
+	if (!((FormRecordSelector)newWindow).setPrimaryKey(keyValue)) {
+	  newWindow.dispose();
+	  return false;
+	}
+	newWindow.setVisible(true);
+	newWindow.setResizable(true);
+	desktop.add(newWindow);
+	try {
+	  newWindow.setSelected(true);
+	}
+	catch (java.beans.PropertyVetoException e) {}
+	addFrameToCache(new WindowNode(formID, formData.getPageTitle(), ((JInternalFrame)newWindow)));
+      }
+      else {
+	if (!((FormRecordSelector)newWindow).setPrimaryKey(keyValue)) {
+	  newWindow.dispose();
+	  return false;
+	}
+	newWindow.show();
+	newWindow.setVisible(true);
+	try {
+	  newWindow.setSelected(true);
+	}
+	catch (java.beans.PropertyVetoException e) {}
+      }
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+    finally {
+      setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }
+    return true;
+  }
+
+  public void addItemToMenu(String regID, Object regRef) {
+
+  }
+}
+
+class WindowNode {
+  String menuId = null;
+  String menuDescription = null;
+  JInternalFrame frmWindow = null;
+  JMenuItem jmiWindowMenu = null;
+
+  public WindowNode(String menuId, String menuDescription, JInternalFrame frmWindow) {
+    this.menuId = menuId;
+    this.menuDescription = menuDescription;
+    this.frmWindow = frmWindow;
+  }
+}

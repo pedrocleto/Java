@@ -1,0 +1,11 @@
+[PropertyInfo]
+father,editor.UserObject,false,false, , ,true,<default>
+nivel,int,false,false, , ,true,<default>
+nome,String,false,false, , ,true,<default>
+prox,editor.UserObject,false,false, , ,true,<default>
+type,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

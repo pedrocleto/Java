@@ -1,0 +1,14 @@
+[PropertyInfo]
+baseDir,String,false,false, , ,false,<default>
+canceled,boolean,false,false, , ,false,<default>
+catalogName,String,false,false, , ,false,<default>
+current,int,false,false, , ,true,<default>
+done,boolean,false,false, , ,true,<default>
+lengthOfTask,int,false,false, , ,true,<default>
+poster,pt.inescporto.siasoft.tools.test.MsgPublisher,false,false, , ,false,<default>
+statMessage,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

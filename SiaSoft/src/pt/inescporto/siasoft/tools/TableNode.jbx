@@ -1,0 +1,20 @@
+[PropertyInfo]
+columnlist,java.util.Iterator,false,false, , ,true,<default>
+columns,java.util.Vector,false,false, , ,false,<default>
+exportedConstraint,java.util.Vector,false,false, , ,false,<default>
+exportedConstraintlist,java.util.Iterator,false,false, , ,true,<default>
+importedConstraint,java.util.Vector,false,false, , ,false,<default>
+importedConstraintlist,java.util.Iterator,false,false, , ,true,<default>
+indexes,java.util.Vector,false,false, , ,false,<default>
+indexlist,java.util.Iterator,false,false, , ,true,<default>
+insertStmt,StringBuffer,false,false, , ,false,<default>
+primaryKey,pt.inescporto.siasoft.tools.TableIndex,false,false, , ,true,<default>
+selectAllStmt,StringBuffer,false,false, , ,false,<default>
+selectWhereStmt,StringBuffer,false,false, , ,false,<default>
+tableName,String,false,false, , ,true,<default>
+updateStmt,StringBuffer,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

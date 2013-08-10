@@ -1,0 +1,17 @@
+[PropertyInfo]
+graph,pt.inescporto.siasoft.proc.client.rmi.editor.Graph,false,false, , ,false,<default>
+jlayeredPane,javax.swing.JLayeredPane,false,false, , ,false,<default>
+jsp,javax.swing.JScrollPane,false,false, , ,false,<default>
+jspLayered,javax.swing.JScrollPane,false,false, , ,false,<default>
+jspModule,javax.swing.JScrollPane,false,false, , ,false,<default>
+layerPane,javax.swing.JLayeredPane,false,false, , ,true,<default>
+modulePane,pt.inescporto.siasoft.proc.client.rmi.editor.ToolBarModule,false,false, , ,true,<default>
+panel,javax.swing.JPanel,false,false, , ,false,<default>
+pathPane,pt.inescporto.siasoft.proc.client.rmi.editor.PathPane,false,false, , ,false,<default>
+toolBarGraph,pt.inescporto.siasoft.proc.client.rmi.editor.ToolBarGraph,false,false, , ,false,<default>
+toolBarModule,pt.inescporto.siasoft.proc.client.rmi.editor.ToolBarModule,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,14 @@
+[PropertyInfo]
+jlblSourceMajorVersion,javax.swing.JLabel,false,false, , ,false,<default>
+jlblSourceMinorVersion,javax.swing.JLabel,false,false, , ,false,<default>
+jlblTargetMajorVersion,javax.swing.JLabel,false,false, , ,false,<default>
+jlblTargetMinorVersion,javax.swing.JLabel,false,false, , ,false,<default>
+jtfldSourceMajorVersion,javax.swing.JTextField,false,false, , ,false,<default>
+jtfldSourceMinorVersion,javax.swing.JTextField,false,false, , ,false,<default>
+jtfldTargetMajorVersion,javax.swing.JTextField,false,false, , ,false,<default>
+jtfldTargetMinorVersion,javax.swing.JTextField,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

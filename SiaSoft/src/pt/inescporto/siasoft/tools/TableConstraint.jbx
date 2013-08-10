@@ -1,0 +1,9 @@
+[PropertyInfo]
+constraintName,String,false,false, , ,false,<default>
+keyRefs,java.util.Hashtable,false,false, , ,false,<default>
+pkTableName,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,5 @@
+<form-report-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/form-report-config.xsd">
+  <form name="pt.inescporto.siasoft.asq.web.forms.RegulatoryForm">
+    <report name="Lista de Diplomas" anchor="pt.inescporto.siasoft.reports.ReportsAnchor" file="asq/Teste.jasper"/>
+  </form>
+</form-report-config>

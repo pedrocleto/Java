@@ -1,0 +1,16 @@
+[PropertyInfo]
+action,int,false,false, , ,true,<default>
+columns2add,java.util.Vector,false,false, , ,true,<default>
+columns2drop,java.util.Vector,false,false, , ,true,<default>
+indexes2add,java.util.Vector,false,false, , ,true,<default>
+indexes2create,java.util.Vector,false,false, , ,false,<default>
+indexes2drop,java.util.Vector,false,false, , ,true,<default>
+primaryKey2create,pt.inescporto.siasoft.tools.TableIndex,false,false, , ,false,<default>
+primaryKey2drop,pt.inescporto.siasoft.tools.TableIndex,false,false, , ,false,<default>
+table,pt.inescporto.siasoft.tools.TableNode,false,false, , ,false,<default>
+tableName,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

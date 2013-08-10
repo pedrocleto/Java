@@ -1,0 +1,16 @@
+[PropertyInfo]
+connectorIcon,javax.swing.ImageIcon,false,false, , ,false,<default>
+datasource,pt.inescporto.template.client.util.DataSourceRMI,false,false, , ,false,<default>
+dragSource,java.awt.dnd.DragSource,false,false, , ,false,<default>
+entryIcon,javax.swing.ImageIcon,false,false, , ,false,<default>
+exitIcon,javax.swing.ImageIcon,false,false, , ,false,<default>
+factoryIcon,javax.swing.ImageIcon,false,false, , ,false,<default>
+fwActList,pt.inescporto.template.client.design.FW_JTable,false,false, , ,false,<default>
+items,pt.inescporto.siasoft.proc.client.rmi.editor.ListItem[],false,false, , ,false,<default>
+operationIcon,javax.swing.ImageIcon,false,false, , ,false,<default>
+processIcon,javax.swing.ImageIcon,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

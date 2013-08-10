@@ -1,0 +1,13 @@
+[PropertyInfo]
+field,String,false,false, , ,true,<default>
+fieldPerm,int,false,false, , ,false,<default>
+holder,javax.swing.JLabel,false,false, , ,true,<default>
+jlblHolder,javax.swing.JLabel,false,false, , ,false,<default>
+label,String,false,false, , ,true,<default>
+labelName,String,false,false, , ,true,<default>
+link,pt.inescporto.template.elements.TplObject,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

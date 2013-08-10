@@ -1,0 +1,14 @@
+[PropertyInfo]
+fieldName,String,false,false, , ,false,<default>
+headerValue,String,false,false, , ,false,<default>
+index,Integer,false,false, , ,true,<default>
+index,int,false,false, , ,false,<default>
+tableCellEditor,javax.swing.table.TableCellEditor,false,false, , ,true,<default>
+tableCellRender,javax.swing.table.TableCellRenderer,false,false, , ,true,<default>
+tce,javax.swing.table.TableCellEditor,false,false, , ,false,<default>
+tcr,javax.swing.table.TableCellRenderer,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

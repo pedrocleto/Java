@@ -1,0 +1,14 @@
+[PropertyInfo]
+attrs,Object,false,false, , ,false,<default>
+borderLayout1,BorderLayout,false,false, , ,false,<default>
+isSupplier,boolean,false,false, , ,false,<default>
+permFormId,String,false,false, , ,false,<default>
+perms,Integer,false,false, , ,false,<default>
+resourceBundle,ResourceBundle,false,false, , ,false,<default>
+url,String,false,false, , ,false,<default>
+urlBase,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

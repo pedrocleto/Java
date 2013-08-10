@@ -1,0 +1,13 @@
+[PropertyInfo]
+columnName,String,false,false, , ,false,<default>
+columnSize,Integer,false,false, , ,false,<default>
+dataType,Integer,false,false, , ,false,<default>
+decimalDigits,Integer,false,false, , ,false,<default>
+nullable,Integer,false,false, , ,false,<default>
+ordinalPosition,Integer,false,false, , ,false,<default>
+typeName,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,9 @@
+[PropertyInfo]
+actHasLinksTable,javax.swing.JTable,false,false, , ,false,<default>
+tableModel,javax.swing.table.DefaultTableModel,false,false, , ,false,<default>
+tm,javax.swing.table.DefaultTableModel,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

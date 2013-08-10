@@ -1,0 +1,10 @@
+[PropertyInfo]
+detail,pt.inescporto.template.client.util.DataSourceDB,false,false, , ,false,<default>
+master,pt.inescporto.template.client.util.DataSourceDB,false,false, , ,false,<default>
+name,String,false,false, , ,false,<default>
+relationKeys,java.util.Vector,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,9 @@
+[PropertyInfo]
+actHasLinksTable,javax.swing.JTable,false,false, , ,true,<default>
+PEditor,pt.inescporto.siasoft.proc.client.rmi.editor.ProcessEditor,false,false, , ,false,<default>
+tableModel,pt.inescporto.siasoft.proc.client.rmi.editor.TableModuleModel,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

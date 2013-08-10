@@ -1,0 +1,16 @@
+[PropertyInfo]
+actConnectionItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+actHasPartItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+actHasPartListItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+actListItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+actNameItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+envAspItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+envAspListItem,javax.swing.JMenuItem,false,false, , ,false,<default>
+frame,javax.swing.JFrame,false,false, , ,false,<default>
+graph,pt.inescporto.siasoft.proc.client.rmi.editor.Graph,false,false, , ,false,<default>
+res,java.util.ResourceBundle,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

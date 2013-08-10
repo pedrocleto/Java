@@ -1,0 +1,10 @@
+[PropertyInfo]
+datasource,pt.inescporto.template.client.util.DataSourceRMI,false,false, , ,false,<default>
+fwEASList,pt.inescporto.template.client.design.FW_JTable,false,false, , ,false,<default>
+graphPanel,pt.inescporto.siasoft.proc.client.rmi.editor.GraphPanel,false,false, , ,false,<default>
+layers,java.util.Hashtable,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

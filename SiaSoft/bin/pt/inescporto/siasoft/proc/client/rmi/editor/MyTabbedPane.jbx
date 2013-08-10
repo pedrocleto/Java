@@ -1,0 +1,12 @@
+[PropertyInfo]
+actHasPartPane,pt.inescporto.siasoft.proc.client.rmi.editor.ActHasPartPane,false,false, , ,false,<default>
+activityHasLinksPane,pt.inescporto.siasoft.proc.client.rmi.editor.ActivityHasLinksPane,false,false, , ,false,<default>
+envAspectPane,pt.inescporto.siasoft.proc.client.rmi.editor.EnvAspectPane,false,false, , ,false,<default>
+layers,java.util.Hashtable,false,false, , ,false,<default>
+tableModel,javax.swing.table.DefaultTableModel,false,false, , ,false,<default>
+tm,javax.swing.table.DefaultTableModel,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

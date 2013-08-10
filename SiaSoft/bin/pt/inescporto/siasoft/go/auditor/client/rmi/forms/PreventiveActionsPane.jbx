@@ -1,0 +1,14 @@
+[PropertyInfo]
+datasource,pt.inescporto.template.client.util.DataSource,false,false, , ,false,<default>
+fwCListener,pt.inescporto.template.client.design.FW_ComponentListener,false,false, , ,false,<default>
+fwPreventiveActionsList,pt.inescporto.template.client.design.FW_JTable,false,false, , ,false,<default>
+jlblAuditActionName,javax.swing.JLabel,false,false, , ,false,<default>
+jsp,javax.swing.JScrollPane,false,false, , ,false,<default>
+jtfldAuditActionName,javax.swing.JTextField,false,false, , ,false,<default>
+navBarDetail,pt.inescporto.template.client.design.FW_NavBarDetail,false,false, , ,false,<default>
+res,java.util.ResourceBundle,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

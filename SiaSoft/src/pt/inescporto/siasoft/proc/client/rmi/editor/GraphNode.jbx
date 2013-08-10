@@ -1,0 +1,18 @@
+[PropertyInfo]
+allLevels,boolean,false,false, , ,false,<default>
+elementType,String,false,false, , ,false,<default>
+hasProperties,boolean,false,false, , ,false,<default>
+icon,javax.swing.ImageIcon,false,false, , ,false,<default>
+id,String,false,false, , ,false,<default>
+idSequence,String,false,false, , ,false,<default>
+linkActivityDesc,String,false,false, , ,false,<default>
+linkActivityID,String,false,false, , ,false,<default>
+name,String,false,false, , ,true,<default>
+neadsParent,boolean,false,false, , ,false,<default>
+noChildren,boolean,false,false, , ,false,<default>
+type,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

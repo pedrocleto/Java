@@ -1,0 +1,20 @@
+[PropertyInfo]
+accessPermitionID,String,false,false, , ,false,<default>
+attrs,Object,false,false, , ,false,<default>
+createParamsType,Class[],false,false, , ,false,<default>
+createParamsValue,Object[],false,false, , ,false,<default>
+ejbLocator,pt.inescporto.template.client.rmi.TmplEJBLocater,false,false, , ,false,<default>
+home,Object,false,false, , ,false,<default>
+listenerList,javax.swing.event.EventListenerList,false,false, , ,false,<default>
+parametersType,Class[],false,false, , ,false,<default>
+perms,Integer,false,false, , ,false,<default>
+relations,java.util.Vector,false,false, , ,false,<default>
+remote,Object,false,false, , ,false,<default>
+staticBinds,java.util.Vector,false,false, , ,false,<default>
+staticLinkCondition,String,false,false, , ,false,<default>
+url,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

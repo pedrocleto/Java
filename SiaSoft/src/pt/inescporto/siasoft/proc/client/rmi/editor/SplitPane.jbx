@@ -1,0 +1,13 @@
+[PropertyInfo]
+actHasPartPane,pt.inescporto.siasoft.proc.client.rmi.editor.ActHasPartPane,false,false, , ,false,<default>
+actHasPartTree,pt.inescporto.siasoft.proc.client.rmi.editor.ActivityHasPartTree,false,false, , ,false,<default>
+envAspectPane,pt.inescporto.siasoft.proc.client.rmi.editor.EnvAspectPane,false,false, , ,false,<default>
+graphPanel,pt.inescporto.siasoft.proc.client.rmi.editor.GraphPanel,false,false, , ,false,<default>
+itemTypeList,pt.inescporto.siasoft.proc.client.rmi.editor.ItemTypeList,false,false, , ,false,<default>
+jsp,javax.swing.JScrollPane,false,false, , ,false,<default>
+tabbedPane,pt.inescporto.siasoft.proc.client.rmi.editor.MyTabbedPane,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

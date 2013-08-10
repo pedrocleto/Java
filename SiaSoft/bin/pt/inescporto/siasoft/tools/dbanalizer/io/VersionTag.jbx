@@ -1,0 +1,10 @@
+[PropertyInfo]
+sourceMajorVersion,String,false,false,sourceMajorVersion,sourceMajorVersion,true,<default>
+sourceMinorVersion,String,false,false,sourceMinorVersion,sourceMinorVersion,true,<default>
+targetMajorVersion,String,false,false,targetMajorVersion,targetMajorVersion,true,<default>
+targetMinorVersion,String,false,false,targetMinorVersion,targetMinorVersion,true,<default>
+[IconNames]
+
+
+
+

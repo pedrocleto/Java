@@ -1,0 +1,12 @@
+[PropertyInfo]
+exception,Throwable,false,false, , ,false,<default>
+FIRST_RECORD,int,false,false, , ,false,<default>
+LAST_RECORD,int,false,false, , ,false,<default>
+NOT_DEFINED,int,false,false, , ,false,<default>
+statusCode,int,false,false, , ,false,<default>
+SUCCESS,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

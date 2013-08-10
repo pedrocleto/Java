@@ -1,0 +1,110 @@
+package pt.inescporto.siasoft.condoc.client.rmi.forms;
+
+import java.util.*;
+
+import javax.swing.*;
+
+import pt.inescporto.siasoft.condoc.ejb.dao.*;
+import pt.inescporto.template.client.rmi.*;
+import pt.inescporto.template.client.util.*;
+import pt.inescporto.template.elements.*;
+import java.awt.BorderLayout;
+
+/**
+ * <p>Title: SIASoft</p>
+ *
+ * <p>Description: </p>
+ *
+ * <p>Copyright: Copyright (c) 2005</p>
+ *
+ * <p>Company: SIA</p>
+ *
+ * @author Pedro
+ * @version 0.1
+ */
+public class DocumentForm extends FW_InternalFrame{
+  JTabbedPane jTabbedPane= new JTabbedPane();
+  DataSourceRMI master = null;
+
+  public DocumentForm() {
+    master = new DataSourceRMI("Document");
+    master.setUrl("pt.inescporto.siasoft.condoc.ejb.session.Document");
+
+    if (!MenuSingleton.isSupplier()) {
+      Vector binds = new Vector();
+      binds.add(new TplString(MenuSingleton.getEnterprise()));
+      try {
+	master.setLinkCondition("fkEnterpriseID = ?", binds);
+      }
+      catch (DataSourceException ex1) {
+      }
+    }
+
+    DataSourceRMI dsRevisors = new DataSourceRMI("DocumentUserRevisors");
+    dsRevisors.setUrl("pt.inescporto.siasoft.condoc.ejb.session.DocumentUserRevisors");
+
+    DSRelation rvRelation = new DSRelation("DURevisor");
+    rvRelation.setMaster(master);
+    rvRelation.setDetail(dsRevisors);
+    rvRelation.addKey(new RelationKey("documentid", "documentid"));
+    try {
+      master.addDataSourceLink(rvRelation);
+    }
+    catch (DataSourceException ex) {
+      ex.printStackTrace();
+    }
+
+    DataSourceRMI dsApprovals = new DataSourceRMI("DocumentUserApproval");
+    dsApprovals.setUrl("pt.inescporto.siasoft.condoc.ejb.session.DocumentUserApproval");
+
+    DSRelation apRelation = new DSRelation("DUApproval");
+    apRelation.setMaster(master);
+    apRelation.setDetail(dsApprovals);
+    apRelation.addKey(new RelationKey("documentid", "documentid"));
+    try {
+      master.addDataSourceLink(apRelation);
+    }
+    catch (DataSourceException ex) {
+      ex.printStackTrace();
+   }
+
+
+    setDataSource(master);
+
+    try {
+      jbInit();
+    }
+    catch (Exception ex) {
+      ex.printStackTrace();
+    }
+
+    start();
+
+  }
+
+
+  private void jbInit() throws Exception {
+    jTabbedPane = new JTabbedPane();
+    add(jTabbedPane, BorderLayout.CENTER);
+    jTabbedPane.add("Definição", new DocumentDefinition(dataSource, this));
+    jTabbedPane.add("Links", new DocumentLink(dataSource, this));
+  }
+
+
+
+  protected void doInsert() {
+    try {
+      if (!MenuSingleton.isSupplier()) {
+        DocumentDao daoEC = (DocumentDao)dataSource.getCurrentRecord();
+        daoEC.fkEnterpriseID.setLinkKey();
+        daoEC.fkEnterpriseID.setValueAsObject(MenuSingleton.getEnterprise());
+        dataSource.reLinkAttrs();
+      }
+      super.doInsert();
+    }
+    catch (DataSourceException ex) {
+      ex.printStackTrace();
+    }
+  }
+
+}

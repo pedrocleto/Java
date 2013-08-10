@@ -1,0 +1,11 @@
+[PropertyInfo]
+insertPart,String,false,false, , ,false,<default>
+keysPart,String,false,false, , ,false,<default>
+selectPart,String,false,false, , ,false,<default>
+updatePart,String,false,false, , ,false,<default>
+wherePart,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

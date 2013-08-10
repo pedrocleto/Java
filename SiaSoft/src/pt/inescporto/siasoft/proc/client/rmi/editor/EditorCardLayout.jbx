@@ -1,0 +1,10 @@
+[PropertyInfo]
+cards,javax.swing.JPanel,false,false, , ,true,<default>
+jbtnUpdate,pt.inescporto.template.client.design.TmplJButtonUpdate,false,false, , ,false,<default>
+toolBarModule,pt.inescporto.siasoft.proc.client.rmi.editor.ToolBarModule,false,false, , ,false,<default>
+updateToolBar,pt.inescporto.siasoft.proc.client.rmi.editor.UpdateToolBar,false,false, , ,true,<default>
+[IconNames]
+
+
+
+
